@@ -13,7 +13,7 @@ async def main():
 
     dp.message.register(handlers.start_command, Command('start'))
     dp.message.register(handlers.handle_message, F.text & F.text.startswith('#'))
-    dp.message.register(handlers.handle_photos, F.photo | F.text.startswith('#'))
+    dp.message.register(handlers.handle_photos, F.photo)
 
     dp.message.middleware(AlbumMiddleware())
 
